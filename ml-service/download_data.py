@@ -1,8 +1,9 @@
 """
-Downloads the configured MovieLens dataset from GroupLens and extracts it
-into ml-service/data/. The default is ml-latest-small so the service can run
-on low-cost hosting. Set MOVIELENS_DATA_URL to use another compatible
-dataset.
+Downloads the configured MovieLens dataset and extracts it into
+ml-service/data/. The default is a GitHub-hosted mirror of the MovieLens
+ml-latest-small archive so hosted builders are not dependent on the expired
+TLS certificate currently served by files.grouplens.org. Set
+MOVIELENS_DATA_URL to use another compatible dataset.
 
 The default dataset includes movies.csv, ratings.csv, links.csv, and tags.csv.
 The links.csv mapping is required for this project's poster/overview
@@ -29,7 +30,7 @@ import urllib.parse
 
 DATA_URL = os.environ.get(
     "MOVIELENS_DATA_URL",
-    "https://files.grouplens.org/datasets/movielens/ml-latest-small.zip",
+    "https://github.com/smanihwr/ml-latest-small/archive/refs/heads/master.zip",
 )
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 ZIP_NAME = os.path.basename(urllib.parse.urlparse(DATA_URL).path) or "movielens.zip"
@@ -81,10 +82,10 @@ def main():
         try:
             urllib.request.urlretrieve(DATA_URL, ZIP_PATH)
         except Exception as e:
-            print(f"\nAutomatic download failed: {e}")
+            print(f"\nDataset download failed: {e}")
             print(
-                "\nThis is usually a local SSL/certificate issue, not a problem with the "
-                "dataset or this script. Easiest fix: download it manually instead —\n"
+                "\nThis may be a network or certificate issue rather than a problem with "
+                "the dataset. To retry with a manually downloaded archive —\n"
                 f"  1. Open this URL in your browser: {DATA_URL}\n"
                 f"  2. Save the file as exactly: {ZIP_PATH}\n"
                 "  3. Run this script again — it will detect the file and extract it directly."
