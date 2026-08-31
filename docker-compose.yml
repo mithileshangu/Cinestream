@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  ml-service:
+    build: ./ml-service
+    ports:
+      - "5001:5001"
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - ML_SERVICE_URL=http://ml-service:5001
+      - TMDB_API_KEY=${TMDB_API_KEY}
+    depends_on:
+      - ml-service
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - VITE_API_BASE_URL=http://localhost:8080
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
