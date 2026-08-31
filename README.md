@@ -238,7 +238,7 @@ cd ml-service
 python download_data.py
 ```
 
-This downloads the default MovieLens small dataset from GroupLens into `ml-service/data/`. One-time step. The Docker build performs this automatically for Render.
+This downloads the default MovieLens small dataset into `ml-service/data/`. The default URL is a GitHub-hosted mirror of the GroupLens archive because the official file host currently serves an expired TLS certificate. One-time step. The Docker build performs this automatically for Render.
 
 ### 3. Get a free TMDB API key
 
