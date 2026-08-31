@@ -8,7 +8,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: MOVIELENS_DATA_URL
-        value: https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+        value: https://github.com/smanihwr/ml-latest-small/archive/refs/heads/master.zip
 
   - type: web
     name: moviestream-backend
