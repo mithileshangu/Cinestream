@@ -1,0 +1,38 @@
+# Secrets — never commit these
+backend/src/main/resources/application-local.properties
+**/.env
+**/.env.local
+
+# Java / Maven
+backend/target/
+*.class
+
+# Python
+ml-service/__pycache__/
+ml-service/*.pyc
+ml-service/.venv/
+ml-service/venv/
+ml-service/data/*.csv
+ml-service/data/*.zip
+ml-service/data/*.pkl
+ml-service/data/*.joblib
+ml-service/data/_extract_tmp/
+
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+
+INTERVIEW_PREP.md
+
+# Imported archives and other local bundles
+*.zip
