@@ -19,10 +19,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: ML_SERVICE_URL
-        fromService:
-          type: web
-          name: moviestream-ml
-          property: hostport
+        value: https://moviestream-ml.onrender.com
       - key: TMDB_API_KEY
         sync: false
 
