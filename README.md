@@ -10,7 +10,7 @@ Unlike a typical portfolio recommender that leans on a single API's popularity s
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://edunavigator-2v6g.onrender.com/)
 
-🚀 **[Launch EduNavigator](https://moviestream-frontend.onrender.com/)**
+🚀 **[Launch Cinestream](https://moviestream-frontend.onrender.com/)**
 
 > The application is hosted on Render. The free instance may take a few seconds to wake up after inactivity.
 
