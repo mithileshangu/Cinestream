@@ -44,4 +44,4 @@ after a Render service restarts.
 2. Keep `backend/src/main/resources/application-local.properties` local and
    ignored. Configure `TMDB_API_KEY` as a Render secret.
 3. Create the three Render services from `render.yaml`.
-4. Confirm the frontend's `VITE_API_BASE_URL` points to the backend service.
+4. Confirm the frontend's `VITE_API_BASE_URL` points to the backend service and the backend's `ML_SERVICE_URL` points to the ML service.
