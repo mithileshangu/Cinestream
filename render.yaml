@@ -34,4 +34,4 @@ services:
     staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://moviestream-backend.onrender.com
+        value: https://moviestream-backend-4i1.onrender.com
