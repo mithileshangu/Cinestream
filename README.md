@@ -8,11 +8,11 @@ Unlike a typical portfolio recommender that leans on a single API's popularity s
 
 ## 🌐 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live-Coming_Soon-orange?style=for-the-badge)](#)
+[![Live Demo](https://moviestream-frontend.onrender.com/)](#)
 
-🚀 **Live link coming soon — deploying to Render.**
+🚀 **Live link — deployed in Render.**
 
-> Once deployed, the free-tier instance may take 30-60 seconds to wake up after inactivity.
+> This instance may take 30-60 seconds to wake up.
 
 ---
 
