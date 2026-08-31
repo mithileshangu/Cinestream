@@ -379,7 +379,7 @@ Docker + `docker-compose.yml`/`render.yaml` are set up for all three services. T
 
 1. Create a new **Blueprint** from this GitHub repository and select the root `render.yaml`.
 2. When Render prompts for `TMDB_API_KEY`, enter the key as a secret value. Never commit it.
-3. Render creates the ML, backend, and frontend services. The backend uses the ML service's private `host:port`.
+3. Render creates the ML, backend, and frontend services. The backend connects to the ML service through its Render URL.
 4. The frontend build uses the backend URL from `render.yaml`. Render may append a short suffix to service URLs, so keep this value synchronized with the URL shown on the backend service page.
 
 If the service names are changed in Render, update the frontend `VITE_API_BASE_URL` value before rebuilding the frontend.
