@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: moviestream-ml
+    runtime: docker
+    dockerfilePath: ./ml-service/Dockerfile
+    dockerContext: ./ml-service
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MOVIELENS_DATA_URL
+        value: https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+
+  - type: web
+    name: moviestream-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ML_SERVICE_URL
+        fromService:
+          type: web
+          name: moviestream-ml
+          property: hostport
+      - key: TMDB_API_KEY
+        sync: false
+
+  - type: web
+    name: moviestream-frontend
+    runtime: static
+    rootDir: frontend
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://moviestream-backend.onrender.com
