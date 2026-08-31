@@ -8,13 +8,12 @@ Unlike a typical portfolio recommender that leans on a single API's popularity s
 
 ## 🌐 Live Demo
 
-[![Live Demo](https://moviestream-frontend.onrender.com/)](#)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://edunavigator-2v6g.onrender.com/)
 
-🚀 **Live link — deployed in Render.**
+🚀 **[Launch EduNavigator](https://moviestream-frontend.onrender.com/)**
 
-> This instance may take 30-60 seconds to wake up.
+> The application is hosted on Render. The free instance may take a few seconds to wake up after inactivity.
 
----
 
 ## 🔬 What's Actually Happening Here
 
