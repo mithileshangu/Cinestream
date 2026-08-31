@@ -95,8 +95,6 @@ MovieLens's `links.csv` connects MovieLens movie IDs with TMDB IDs.
 
 ## 🖥️ Screenshots
 
-Place screenshots in `docs/screenshots/`:
-
 ### Home
 ![CineStream Home](docs/screenshots/Home.png)
 
