@@ -1,0 +1,7 @@
+data/*.csv
+data/*.zip
+data/*.pkl
+data/*.joblib
+data/_extract_tmp/
+__pycache__/
+*.pyc
