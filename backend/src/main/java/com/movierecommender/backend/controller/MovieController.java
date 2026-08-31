@@ -26,6 +26,17 @@ public class MovieController {
         this.enrichmentService = enrichmentService;
     }
 
+    @GetMapping
+    public ResponseEntity<?> getMovies(@RequestParam(defaultValue = "100") int limit,
+                                       @RequestParam(defaultValue = "0") int offset) {
+        try {
+            List<MlMovieResult> results = mlServiceClient.listMovies(limit, offset);
+            return ResponseEntity.ok(enrichmentService.enrichAll(results));
+        } catch (MLServiceClient.MLServiceUnavailableException e) {
+            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(e.getMessage());
+        }
+    }
+
     /** Real popularity signal from actual MovieLens rating counts, not a proxy. */
     @GetMapping("/trending")
     public ResponseEntity<?> getTrending(@RequestParam(defaultValue = "100") int limit) {
